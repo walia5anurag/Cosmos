@@ -1,5 +1,7 @@
 header{
+    background-color:rgb(51, 121, 51);
     width:100%;
+    color:white;
     padding:2em 2em 2em 2em;
     border:1px solid black;
     display:flex;
@@ -7,12 +9,9 @@ header{
 }
 
 .title{
+    text-align: center;
+}
 
-    border:1px dotted green;
-}
-.subtitle{
-    border:1px dotted yellow;
-}
 .search{
     width:50%;
     margin:auto;
