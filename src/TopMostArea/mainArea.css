@@ -1,0 +1,29 @@
+header{
+    width:100%;
+    padding:2em 2em 2em 2em;
+    border:1px solid black;
+    display:flex;
+    justify-content:space-around;
+}
+
+.title{
+
+    border:1px dotted green;
+}
+.subtitle{
+    border:1px dotted yellow;
+}
+.search{
+    width:50%;
+    margin:auto;
+    border:1px solid red;
+}
+@media (max-width:400px){
+    .header{
+        padding:2em 2em 2em 2em;
+    
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around; 
+    }
+}

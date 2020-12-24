@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './mainArea.css'
 class mainArea extends Component{
     constructor(props){
         super(props)
@@ -9,16 +10,15 @@ class mainArea extends Component{
 
     render(){
         return(
-        <div class='MainDiv'>
-            <div class='TextArea'>
-            <span class='CosmosHeading'>COSMOS</span><br/>
-            <span class='OtherText'>By Anurag,</span><br/>
-            <span class='smallText'>Guardian API</span>
+        <header>
+            <div class='title'>
+                <h1>The Cosmos</h1>
+                <p class='subtitle'>By Anurag, using Guardian API</p>
             </div>
-            <div class='SearchArea'>
-                
+            <div class='search'>
+                <input></input>
             </div>
-        </div>
+        </header>
         )
     }
 
