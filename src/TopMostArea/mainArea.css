@@ -22,7 +22,6 @@ input{
     text-align: center;
     width:50%;
     margin:auto;
-    border:1px solid red;
 }
 .search_Bar{
     display: flex;
@@ -39,7 +38,7 @@ button{
     border-left: none; /* Prevent double borders */
     cursor: pointer;
 }
-@media (max-width:441px){
+@media (max-width:589px){
     header{
         display:flex;
         flex-direction: column;

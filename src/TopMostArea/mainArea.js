@@ -17,7 +17,7 @@ handleSearch=(evt)=>{
 }
 submitSearch=()=>{
     console.log(this.state.searchKeyWord)
-    axios.get('http://content.guardianapis.com/tags?api-key=fc9dc684-1029-4847-830a-b19cc6f67841')
+    axios.get('https://content.guardianapis.com/search?q='+this.state.searchKeyWord+'&api-key=fc9dc684-1029-4847-830a-b19cc6f67841')
     .then(response=>{
       console.log(response.data)
     })
@@ -35,7 +35,6 @@ submitSearch=()=>{
                     <input type="text" placeholder="Search.." name="search" onChange={this.handleSearch}/>
                     <button type="submit" onClick={this.submitSearch}><i class="fa fa-search"></i></button>
                 </div>
-
             </div>
         </header>
         )
