@@ -12,26 +12,29 @@ class mainArea extends Component{
         }
     }
 handleSearch=(evt)=>{
-    console.log(evt.target.value)
-   
+     
     this.setState({
         searchKeyWord:evt.target.value,
     })
 }
+handleClose=()=>{
+    this.setState({
+        openDialog:false,
+    })
+}
 submitSearch=()=>{
-    console.log(this.state.searchKeyWord)
     axios.get('https://content.guardianapis.com/search?q='+this.state.searchKeyWord+'&api-key=fc9dc684-1029-4847-830a-b19cc6f67841')
     .then(response=>{
         this.setState({
-            openDialog:!this.state.openDialog,
+            openDialog:true,
             data:response.data.response.results,
         })
-      console.log(response.data)
-      console.log(this.state.openDialog)
+
     })
 }
     render(){
         return(
+            <div>
         <header>
             <div class='title'>
                 <h1>The Cosmos</h1>
@@ -42,10 +45,14 @@ submitSearch=()=>{
                 <div class='search_Bar'>
                     <input type="text" placeholder="Search.." name="search" onChange={this.handleSearch}/>
                     <button type="submit" onClick={this.submitSearch}><i class="fa fa-search"></i></button>
-                    <DialogBox searchWord={this.state.searchKeyWord} apiResponse={this.state.data}/>
+             
                 </div>
             </div>
         </header>
+               {this.state.openDialog && 
+                <DialogBox searchWord={this.state.searchKeyWord} func={this.handleClose} apiResponse={this.state.data}/>
+}
+</div>
         )
     }
 
